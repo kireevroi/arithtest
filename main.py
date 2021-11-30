@@ -25,7 +25,7 @@ cool_text("Введите сложность (количество цифр в �
 complexity = input()
 #cool_text("Введите какие операторы будут использоваться (0: + , 1: - ,2: * )")
 #operand_input = input()
-
+complexity = int(complexity)
 #start
 cool_text("Нажмите Enter, чтобы начать, \"q\", чтобы выйти")
 start = input()
@@ -49,12 +49,12 @@ while(True):
     in_put = input()
     #exit case
     if in_put.lower() == "q":
-        db.dbappend('db_stats', name, win_counter*complexity)
+        db.dbappend('db_stats', name, win_counter)
         break
     #calculation case
     if int(in_put) == first_num+second_num:
         print("Молодец")
-        win_counter = win_counter + 1
+        win_counter = win_counter + 1*complexity
     #wrong answer case
     else:
         print("Ошибка!")
