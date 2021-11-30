@@ -1,6 +1,6 @@
 import sqlite3
 
-# инциализируем базу данных, если её еще не было.
+#initializing database
 def dbinit(db_name):
     db_connection = sqlite3.connect(db_name)
     db_cursor = db_connection.cursor()
@@ -11,9 +11,10 @@ def dbinit(db_name):
               ''')
 
     db_connection.commit()
-    return "База данных " + str(db_name) + " инициализирована!"
+    print("База данных " + str(db_name) + " инициализирована!")
+    return None
 
-# добавление значений в базу данных
+#appending values to database
 def dbappend(db_name, name, score):
     db_connection = sqlite3.connect(db_name)
     db_cursor = db_connection.cursor()
@@ -22,19 +23,16 @@ def dbappend(db_name, name, score):
                 INSERT INTO statistics (user_id, user_name, score) VALUES (NULL, ?, ?)
                 '''), (name, score))
     db_connection.commit()
-    return print("Молодец, " + str(name) + "! Ты заработал(а) "+str(score)+" очков!!!")
-# печать таблицы лидеров
-def db_print(db_name):
+    print("Молодец, " + str(name) + "! Ты заработал(а) "+str(score)+" очков!!!")
+    return None
+
+#printing leaderboard
+def dbprint(db_name):
     db_connection = sqlite3.connect(db_name)
     db_cursor = db_connection.cursor()
-    db_cursor.execute('''SELECT user_name, score FROM statistics ORDER BY score LIMIT 5''')
+    db_cursor.execute('''SELECT user_name, score FROM statistics ORDER BY score DESC LIMIT 5''')
     for i in db_cursor.fetchall():
-        print(i) # заменить на cool_text
+        print(i) #should replace with cooltext
 
     db_connection.commit()
-
-
-#тесты    
-dbinit('db_stats')
-dbappend('db_stats', 'Рома', 100)
-db_print('db_stats')
+    return None
