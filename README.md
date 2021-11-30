@@ -1,6 +1,9 @@
 # ariphtest
 Ariphmetic test
 
+PY2EXE and DISTUTILS REQUIRED TO GET EXE FILE using py2exe
+
+
 30.11.2021// Added result database. Not integrated yet.
 Comments need to be translated
 
@@ -9,3 +12,7 @@ Base functionality still works.
 Comments are translated.
 Added names and score scaling depending on complexity.
 Need to move the calculation to another file for readability.
+
+30.11.2021-2// Added setup.py to form an installer via py2exe and distutils
+I still reccomend using pyinstaller as it is alot easier and allows you to get
+a single exe file.
