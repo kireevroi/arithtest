@@ -1,10 +1,15 @@
-# ariphtest
-Ariphmetic test
+# Arithtest
+Arithhmetic test
 
+## Description
+A simple problem solving trainer for console use.
+
+
+## Dependencies
 PY2EXE and DISTUTILS REQUIRED TO GET EXE FILE using py2exe
 
-
-30.11.2021// Added result database. Not integrated yet.
+## Changelog
+06.02.2021// Added result database. Not integrated yet.
 Comments need to be translated
 
 30.11.2021// Integrated result database to main.py via dbinteraction.py
