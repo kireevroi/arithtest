@@ -1,5 +1,5 @@
 # Arithtest
-Arithhmetic test
+Arithmetic test
 
 ## Description
 A simple problem solving trainer for console use.
